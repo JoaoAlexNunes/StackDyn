@@ -49,8 +49,7 @@ int GuiDraw::Draw()
     // Context was created start glew
     if (glewInit() != GLEW_OK)
         std::cout << "ERROR !" << std::endl;
-
-    std::cout << glGetString(GL_VERSION) << std::endl;
+    
     {
         float positions[] = {
              -70.0f, -35.0f, 0.0f, 0.0f, // Vertice 0
@@ -113,13 +112,6 @@ int GuiDraw::Draw()
                 shader.SetUniformMat4f("u_MVP", mvp);
                 renderer.Draw(va, ib, shader);
             }
-
-            /* {
-                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationB);
-                glm::mat4 mvp = proj * view * model;
-                shader.SetUniformMat4f("u_MVP", mvp);
-                renderer.Draw(va, ib, shader);
-            }*/
 
             if (r > 1.0f)
                 increment = -0.05f;

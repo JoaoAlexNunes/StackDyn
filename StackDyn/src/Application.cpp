@@ -1,8 +1,10 @@
 #include "GuiDraw.h"
+#include "Console.h"
 
 int main(void)
 {
-    GuiDraw::GuiDraw();
+    Console console;
+    GuiDraw gui;
     
     return 0;
 }

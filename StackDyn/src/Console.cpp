@@ -1,10 +1,5 @@
 #include "Console.h"
 
-int Console::Draw()
-{
-	return 0;
-}
-
 Console::Console()
 {
 	Draw();
@@ -13,3 +8,9 @@ Console::Console()
 Console::~Console()
 {
 }
+void Console::Draw()
+{
+	SetConsoleTitle(TEXT("3.3.0 - Build 30.0.100.9805"));
+	std::cout << "Test Console writing" << std::endl;
+}
+

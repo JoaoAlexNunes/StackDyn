@@ -2,12 +2,13 @@
 
 #include <iostream>
 #include <string>
+#include <windows.h>
 
 
 class Console
 {
 private:
-	int Draw();
+	void Draw();
 public:
 	Console();
 	~Console();

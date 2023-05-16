@@ -2,7 +2,7 @@
 
 int Console::Draw()
 {
-	return 0;
+	
 }
 
 Console::Console()

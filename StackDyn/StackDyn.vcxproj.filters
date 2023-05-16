@@ -1363,5 +1363,26 @@
     <Image Include="res\textures\rock.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\container001-blue-small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\container001-green-small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\container001-grey-small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\container001-orange-small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\container001-purple-small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\container001-red-small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\container001-small-nm.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -29,20 +29,31 @@ int main(void)
     if (!glfwInit())
         return -1;
 
+    GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+
     /*glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);*/
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(960, 540, "Hello World", NULL, NULL);
+    const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+    
+    //Maximized Window
+    int left, top, right, bottom;
+    glfwGetMonitorWorkarea(monitor, &left, &top, &right, &bottom);
+    int width = right - left;
+    int height = bottom - top;
+
+    // Create a window
+    window = glfwCreateWindow(width, height, "hello", NULL, NULL);
+
     if (!window)
     {
         glfwTerminate();
         return -1;
     }
 
-
+    glfwMaximizeWindow(window);
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
@@ -54,10 +65,10 @@ int main(void)
     std::cout << glGetString(GL_VERSION) << std::endl;
     {
         float positions[] = {
-             -50.0f, -50.0f, 0.0f, 0.0f,
-              50.0f, -50.0f, 1.0f, 0.0f,
-              50.0f,  50.0f, 1.0f, 1.0f,
-             -50.0f,  50.0f, 0.0f, 1.0f,
+             -100.0f, -35.0f, 0.0f, 0.0f, // Vertice 0
+              100.0f, -35.0f, 1.0f, 0.0f, // Vertice 1
+              100.0f,  35.0f, 1.0f, 1.0f, // Vertice 2
+             -100.0f,  35.0f, 0.0f, 1.0f  // Vertice 3
         };
 
         unsigned int indices[] = {
@@ -84,7 +95,7 @@ int main(void)
         Shader shader("res/shaders/Basic.shader");
         shader.Bind();
 
-        Texture texture("res/textures/rock.png");
+        Texture texture("res/textures/container001-blue-small.png");
         texture.Bind();
         shader.SetUniform1i("u_Texture", 0);
 
@@ -95,8 +106,8 @@ int main(void)
         ImGui_ImplGlfwGL3_Init(window, true);
         ImGui::StyleColorsDark();
 
-        glm::vec3 translationA(200, 200, 0);
-        glm::vec3 translationB(400, 200, 0);
+        glm::vec3 translationA(101, 36, 0);
+        //glm::vec3 translationB(400, 200, 0);
 
         float r = 0.0f;
         float increment = 0.05f;
@@ -115,12 +126,12 @@ int main(void)
                 renderer.Draw(va, ib, shader);
             }
 
-            {
+            /* {
                 glm::mat4 model = glm::translate(glm::mat4(1.0f), translationB);
                 glm::mat4 mvp = proj * view * model;
                 shader.SetUniformMat4f("u_MVP", mvp);
                 renderer.Draw(va, ib, shader);
-            }
+            }*/
 
             if (r > 1.0f)
                 increment = -0.05f;
@@ -130,8 +141,9 @@ int main(void)
 
             {
 
-                ImGui::SliderFloat3("Translation A", &translationA.x, 0.0f, 960.0f);
-                ImGui::SliderFloat3("Translation B", &translationB.x, 0.0f, 960.0f);
+                ImGui::SliderFloat2("Translation A", &translationA.x, 0.0f, 960.0f);
+                //Draw a second square
+                //ImGui::SliderFloat3("Translation B", &translationB.x, 0.0f, 960.0f);
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
             }
 

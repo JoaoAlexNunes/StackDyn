@@ -547,6 +547,13 @@
     <None Include="src\vendor\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\textures\container001-blue-small.png" />
+    <Image Include="res\textures\container001-green-small.png" />
+    <Image Include="res\textures\container001-grey-small.png" />
+    <Image Include="res\textures\container001-orange-small.png" />
+    <Image Include="res\textures\container001-purple-small.png" />
+    <Image Include="res\textures\container001-red-small.png" />
+    <Image Include="res\textures\container001-small-nm.png" />
     <Image Include="res\textures\rock.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

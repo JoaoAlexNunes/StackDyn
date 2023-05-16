@@ -29,8 +29,8 @@ int GuiDraw::Draw()
     //Maximized Window
     int left, top, right, bottom;
     glfwGetMonitorWorkarea(glfwGetPrimaryMonitor(), &left, &top, &right, &bottom);
-    int width = right - left;
-    int height = bottom - top;
+    float width = (float)right - left;
+    float height = (float)bottom - top;
 
     // Create a window
     window = glfwCreateWindow(width, height, "hello", NULL, NULL);
@@ -77,7 +77,7 @@ int GuiDraw::Draw()
 
         IndexBuffer ib(indices, 6);
 
-        glm::mat4 proj = glm::ortho(0.0f, 900.0f, 0.0f, 540.0f, -1.0f, 1.0f);
+        glm::mat4 proj = glm::ortho(0.0f, width, 0.0f, height, -1.0f, 1.0f);
         glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 
         Shader shader("res/shaders/Basic.shader");
@@ -94,7 +94,7 @@ int GuiDraw::Draw()
         ImGui_ImplGlfwGL3_Init(window, true);
         ImGui::StyleColorsDark();
 
-        glm::vec3 translationA(101, 36, 0);
+        glm::vec3 translationA(70, 35, 0);
         //glm::vec3 translationB(400, 200, 0);
 
         float r = 0.0f;
@@ -154,7 +154,6 @@ int GuiDraw::Draw()
     ImGui::DestroyContext();
 
     glfwTerminate();
-
 }
 
 GuiDraw::~GuiDraw()

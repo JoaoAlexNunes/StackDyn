@@ -86,7 +86,7 @@ int GuiDraw::Draw()
         texture.Bind();
         shader.SetUniform1i("u_Texture", 0);
 
-        Texture texture2("res/textures/container001-red-small.png");
+        Texture texture2("res/textures/ground.png");
         shader.SetUniform1i("u_Texture", 0);
 
         Renderer renderer;

@@ -81,10 +81,10 @@ int GuiDraw::Draw()
 
         Shader shader("res/shaders/Basic.shader");
         shader.Bind();
+        
 
         Texture texture("res/textures/container001-blue-small.png");
-        texture.Bind();
-        shader.SetUniform1i("u_Texture", 0);
+        Texture texture2("res/textures/ground.png");
 
         Renderer renderer;
 
@@ -94,7 +94,7 @@ int GuiDraw::Draw()
         ImGui::StyleColorsDark();
 
         glm::vec3 translationA(70, 35, 0);
-        //glm::vec3 translationB(400, 200, 0);
+        glm::vec3 translationB(400, 200, 0);
 
         float r = 0.0f;
         float increment = 0.05f;
@@ -110,8 +110,18 @@ int GuiDraw::Draw()
                 glm::mat4 model = glm::translate(glm::mat4(1.0f), translationA);
                 glm::mat4 mvp = proj * view * model;
                 shader.SetUniformMat4f("u_MVP", mvp);
+                texture.Bind();
                 renderer.Draw(va, ib, shader);
             }
+
+            {
+                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationB);
+                glm::mat4 mvp = proj * view * model;
+                shader.SetUniformMat4f("u_MVP", mvp);
+                texture2.Bind();
+                renderer.Draw(va, ib, shader);
+            }
+
 
             if (r > 1.0f)
                 increment = -0.05f;

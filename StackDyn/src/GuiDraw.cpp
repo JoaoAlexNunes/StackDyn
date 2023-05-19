@@ -52,10 +52,10 @@ int GuiDraw::Draw()
     
     {
         float positions[] = {
-             -70.0f, -35.0f, 0.0f, 0.0f, // Vertice 0
-              70.0f, -35.0f, 1.0f, 0.0f, // Vertice 1
-              70.0f,  25.0f, 1.0f, 1.0f, // Vertice 2
-             -70.0f,  25.0f, 0.0f, 1.0f  // Vertice 3
+             -150.0f, -35.0f, 0.0f, 0.0f, // Vertice 0
+              150.0f, -35.0f, 1.0f, 0.0f, // Vertice 1
+              150.0f,  35.0f, 1.0f, 1.0f, // Vertice 2
+             -150.0f,  35.0f, 0.0f, 1.0f  // Vertice 3
         };
 
         unsigned int indices[] = {
@@ -82,8 +82,7 @@ int GuiDraw::Draw()
         Shader shader("res/shaders/Basic.shader");
         shader.Bind();
 
-        Texture texture("res/textures/container001-blue-small.png");
-        texture.Bind();
+        Texture texture("res/textures/container001-blue-small.png"); 
         shader.SetUniform1i("u_Texture", 0);
 
         Texture texture2("res/textures/container001-red-small.png");
@@ -96,8 +95,12 @@ int GuiDraw::Draw()
         ImGui_ImplGlfwGL3_Init(window, true);
         ImGui::StyleColorsDark();
 
-        glm::vec3 translationA(70, 35, 0);
-        glm::vec3 translationB(400, 200, 0);
+        glm::vec3 translationA(175, 35, 0);
+        glm::vec3 translationB(700, 35, 0);
+        glm::vec3 translationC(950, 35, 0);
+        glm::vec3 translationD(1250, 35, 0);
+        glm::vec3 translationE(1750, 35, 0);
+        glm::vec3 translationF(400, 200, 0);
 
         float r = 0.0f;
         float increment = 0.05f;
@@ -109,6 +112,7 @@ int GuiDraw::Draw()
 
             ImGui_ImplGlfwGL3_NewFrame();
 
+            //left ground
             {
                 glm::mat4 model = glm::translate(glm::mat4(1.0f), translationA);
                 glm::mat4 mvp = proj * view * model;
@@ -117,8 +121,48 @@ int GuiDraw::Draw()
                 renderer.Draw(va, ib, shader);
             }
 
+
+            //middle ground
             {
                 glm::mat4 model = glm::translate(glm::mat4(1.0f), translationB);
+                glm::mat4 mvp = proj * view * model;
+                shader.SetUniformMat4f("u_MVP", mvp);
+                texture.Bind();
+                renderer.Draw(va, ib, shader);
+            }
+
+            {
+                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationC);
+                glm::mat4 mvp = proj * view * model;
+                shader.SetUniformMat4f("u_MVP", mvp);
+                texture.Bind();
+                renderer.Draw(va, ib, shader);
+            }
+
+            {
+                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationD);
+                glm::mat4 mvp = proj * view * model;
+                shader.SetUniformMat4f("u_MVP", mvp);
+                texture.Bind();
+                renderer.Draw(va, ib, shader);
+            }
+
+
+
+            //right ground
+            {
+                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationE);
+                glm::mat4 mvp = proj * view * model;
+                shader.SetUniformMat4f("u_MVP", mvp);
+                texture.Bind();
+                renderer.Draw(va, ib, shader);
+            }
+
+
+
+            //container 
+            {
+                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
                 glm::mat4 mvp = proj * view * model;
                 shader.SetUniformMat4f("u_MVP", mvp);
                 texture2.Bind();
@@ -136,6 +180,11 @@ int GuiDraw::Draw()
             {
                
                 ImGui::SliderFloat2("Translation A", &translationA.x, 0.0f, 960.0f);
+                ImGui::SliderFloat2("Translation B", &translationB.x, 0.0f, 1060.0f);
+                ImGui::SliderFloat2("Translation C", &translationC.x, 0.0f, 1160.0f);
+                ImGui::SliderFloat2("Translation D", &translationD.x, 0.0f, 1260.0f);
+                ImGui::SliderFloat2("Translation E", &translationE.x, 0.0f, 1360.0f);
+                ImGui::SliderFloat2("Translation F", &translationF.x, 0.0f, 1460.0f);
                 //Draw a second square
                 //ImGui::SliderFloat3("Translation B", &translationB.x, 0.0f, 960.0f);
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);

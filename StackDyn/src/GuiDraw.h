@@ -23,6 +23,13 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw_gl3.h"
 
+//added by PM
+#include <vector>
+#include <map>
+#include <variant>
+using namespace std;
+using vec_types = std::variant<vector<int>, glm::vec3, Texture, int, int>;
+
 class GuiDraw
 {
 private:

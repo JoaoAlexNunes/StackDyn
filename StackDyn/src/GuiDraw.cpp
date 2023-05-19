@@ -1,12 +1,13 @@
 #include "GuiDraw.h"
 
+//using string_int = std::variant<std::string, int>;
+
+//std::vector<string_int> vec;
 
 GuiDraw::GuiDraw() 
 {
     Draw();
 }
-
-
 
 
 int GuiDraw::Draw()
@@ -102,6 +103,28 @@ int GuiDraw::Draw()
         glm::vec3 translationE(1750, 35, 0);
         glm::vec3 translationF(175, 105, 0);
 
+        //criar as translations para o ground
+
+
+        int pos_x, pos_y = 0;
+
+        //criar o vetor das posições (translations) 
+        // [0] -> posições i chão
+        // [1] -> posições dos containers 
+        std::vector<vec_types> vec_master{//vetor principal 
+            //{ //chao
+
+                //{ //vetor dos pedaços do chão
+                    //{pos_x, pos_y}, //pos(x,y) para o draw
+                    //translationA,   //translation
+                    //texture,        //textura
+                    //0,              //id
+                    //500             //segundos para countdown
+                //} 
+            //}                 
+
+        };
+
         float r = 0.0f;
         float increment = 0.05f;
         /* Loop until the user closes the window */
@@ -159,17 +182,21 @@ int GuiDraw::Draw()
             }
 
             
-            //int arr_containers[] = { 1,2,3,4,5 };
+
+            
+
+
+
             //for (int i : arr_containers)
             //{
                 //container 
-                {
-                    glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
-                    glm::mat4 mvp = proj * view * model;
-                    shader.SetUniformMat4f("u_MVP", mvp);
-                    texture2.Bind();
-                    renderer.Draw(va, ib, shader);
-                }
+            {
+                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
+                glm::mat4 mvp = proj * view * model;
+                shader.SetUniformMat4f("u_MVP", mvp);
+                texture2.Bind();
+                renderer.Draw(va, ib, shader);
+            }
             //}
 
 

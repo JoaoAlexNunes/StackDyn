@@ -111,7 +111,7 @@ int GuiDraw::Draw()
         //criar o vetor das posições (translations) 
         // [0] -> posições i chão
         // [1] -> posições dos containers 
-        std::vector<vec_types> vec_master{//vetor principal 
+        //std::vector<vec_types> vec_master{//vetor principal 
             //{ //chao
 
                 //{ //vetor dos pedaços do chão
@@ -123,7 +123,7 @@ int GuiDraw::Draw()
                 //} 
             //}                 
 
-        };
+        //};
 
         float r = 0.0f;
         float increment = 0.05f;

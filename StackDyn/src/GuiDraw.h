@@ -27,8 +27,8 @@
 #include <vector>
 #include <map>
 #include <variant>
-using namespace std;
-using vec_types = std::variant<vector<int>, glm::vec3, Texture, int, int>;
+//using namespace std;
+//using vec_types = std::variant<vector<int>, glm::vec3, Texture, int, int>;
 
 class GuiDraw
 {

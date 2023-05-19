@@ -100,7 +100,7 @@ int GuiDraw::Draw()
         glm::vec3 translationC(950, 35, 0);
         glm::vec3 translationD(1250, 35, 0);
         glm::vec3 translationE(1750, 35, 0);
-        glm::vec3 translationF(400, 200, 0);
+        glm::vec3 translationF(175, 105, 0);
 
         float r = 0.0f;
         float increment = 0.05f;
@@ -158,16 +158,19 @@ int GuiDraw::Draw()
                 renderer.Draw(va, ib, shader);
             }
 
-
-
-            //container 
-            {
-                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
-                glm::mat4 mvp = proj * view * model;
-                shader.SetUniformMat4f("u_MVP", mvp);
-                texture2.Bind();
-                renderer.Draw(va, ib, shader);
-            }
+            
+            //int arr_containers[] = { 1,2,3,4,5 };
+            //for (int i : arr_containers)
+            //{
+                //container 
+                {
+                    glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
+                    glm::mat4 mvp = proj * view * model;
+                    shader.SetUniformMat4f("u_MVP", mvp);
+                    texture2.Bind();
+                    renderer.Draw(va, ib, shader);
+                }
+            //}
 
 
             if (r > 1.0f)

@@ -558,6 +558,7 @@
     <Image Include="res\textures\container001-purple-small.png" />
     <Image Include="res\textures\container001-red-small.png" />
     <Image Include="res\textures\container001-small-nm.png" />
+    <Image Include="res\textures\ground.png" />
     <Image Include="res\textures\rock.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

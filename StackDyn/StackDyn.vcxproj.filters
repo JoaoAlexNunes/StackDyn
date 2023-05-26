@@ -1396,5 +1396,8 @@
     <Image Include="res\textures\container001-small-nm.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\ground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

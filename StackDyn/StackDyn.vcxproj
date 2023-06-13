@@ -94,6 +94,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Console\Crane.cpp" />
+    <ClCompile Include="src\Console\Handover.cpp" />
+    <ClCompile Include="src\Console\Block.cpp" />
     <ClCompile Include="src\Gui\GuiDraw.cpp" />
     <ClCompile Include="src\Console\Console.cpp" />
     <ClCompile Include="src\Application.cpp" />
@@ -109,8 +112,12 @@
     <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Gui\VertexArray.cpp" />
     <ClCompile Include="src\Gui\VertexBuffer.cpp" />
+    <ClCompile Include="src\Console\Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Console\Crane.h" />
+    <ClInclude Include="src\Console\Handover.h" />
+    <ClInclude Include="src\Console\Block.h" />
     <ClInclude Include="src\Gui\GuiDraw.h" />
     <ClInclude Include="src\Console\Console.h" />
     <ClInclude Include="src\Gui\IndexBuffer.h" />
@@ -410,6 +417,7 @@
     <ClInclude Include="src\Gui\VertexArray.h" />
     <ClInclude Include="src\Gui\VertexBuffer.h" />
     <ClInclude Include="src\Gui\VertexBufferLayout.h" />
+    <ClInclude Include="src\Console\Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />

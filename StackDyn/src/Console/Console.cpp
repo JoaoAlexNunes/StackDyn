@@ -1,6 +1,8 @@
 #include "Console.h"
 
 
+bool stopExecution = false;
+
 // Function to execute
 void myFunction()
 {
@@ -19,7 +21,7 @@ std::chrono::milliseconds getRandomInterval(int minMilliseconds, int maxMillisec
 // Asynchronous execution
 void executeFunctionAsync(int interval)
 {
-    while (true)
+    while (!stopExecution)
     {
         std::this_thread::sleep_for(getRandomInterval(interval, interval * 4));
         myFunction();
@@ -48,6 +50,7 @@ void Console::Draw()
     std::this_thread::sleep_for(std::chrono::seconds(10));  // Let the execution run for 10 seconds
 
     // Stop the asynchronous execution
+    stopExecution = true;
     t.join();
 
 }

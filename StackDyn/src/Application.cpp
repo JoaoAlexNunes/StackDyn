@@ -1,10 +1,10 @@
-#include "GuiDraw.h"
+#include "GUI/GuiDraw.h"
 #include "Console.h"
 
 int main(void)
 {
     Console console;
-    GuiDraw gui;
+    //GuiDraw gui;
     
     return 0;
 }

@@ -1,3 +1,5 @@
+#pragma once
+
 class Stack {
 public:
     int StackID;                    //tem que ser maios que 1

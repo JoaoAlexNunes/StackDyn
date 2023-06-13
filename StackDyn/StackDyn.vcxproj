@@ -104,6 +104,7 @@
     <ClCompile Include="src\Gui\Renderer.cpp" />
     <ClCompile Include="src\Gui\Shader.cpp" />
     <ClCompile Include="src\Gui\Texture.cpp" />
+    <ClCompile Include="src\thread.cpp" />
     <ClCompile Include="src\vendor\glm\detail\glm.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />

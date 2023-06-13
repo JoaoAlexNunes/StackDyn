@@ -1,5 +1,5 @@
 #include "GUI/GuiDraw.h"
-#include "Console.h"
+#include "Console/Console.h"
 
 int main(void)
 {

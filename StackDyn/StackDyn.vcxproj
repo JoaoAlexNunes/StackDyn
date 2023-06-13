@@ -95,7 +95,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Gui\GuiDraw.cpp" />
-    <ClCompile Include="src\Console.cpp" />
+    <ClCompile Include="src\Console\Console.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Gui\IndexBuffer.cpp" />
     <ClCompile Include="src\Gui\Renderer.cpp" />
@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Gui\GuiDraw.h" />
-    <ClInclude Include="src\Console.h" />
+    <ClInclude Include="src\Console\Console.h" />
     <ClInclude Include="src\Gui\IndexBuffer.h" />
     <ClInclude Include="src\Gui\Renderer.h" />
     <ClInclude Include="src\Gui\Shader.h" />

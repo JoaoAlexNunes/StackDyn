@@ -1,9 +1,14 @@
 #include "Block.h"
 
-class Block {
-public:
-    int BlockID;
-    double Time_Release, Due_Date;
-    std::string Ready;
-};
-//
+
+Block::Block(int bId, double tr, double dd, std::string r)
+{
+	BlockID = bId;
+	Time_Release = tr;
+	Due_Date = dd;
+	Ready = r;
+}
+
+Block::~Block()
+{
+}

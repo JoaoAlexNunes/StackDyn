@@ -1,10 +1,12 @@
 #pragma once
 
+#include <list>
+
 class Stack {
 public:
-    int StackID;                    //tem que ser maios que 1
-    int Weight;
+    int StackID, Weigth;     //tem que ser maios que 1
+    int* Blocklist;
 
-    //Dentro do Stack fazer uma funcao que lista os blocks em cada buffer
+    Stack(int sId, int w);
+    ~Stack();
 };
-//

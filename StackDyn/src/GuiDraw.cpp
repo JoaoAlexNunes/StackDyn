@@ -102,6 +102,7 @@ int GuiDraw::Draw()
         glm::vec3 translationD(1250, 35, 0);
         glm::vec3 translationE(1750, 35, 0);
         glm::vec3 translationF(175, 105, 0);
+        glm::vec3 translationG(175, 105, 0);
 
         //criar as translations para o ground
 
@@ -184,21 +185,35 @@ int GuiDraw::Draw()
             
 
             
+            std::variant<int, std::string> f(21);
+
+            std::visit([](auto v) {std::cout << v; }, f);
+
+            //std::vector<vec_types> vec_returned;
+
+            //vec_returned = DrawContainers();
 
 
-
-            //for (int i : arr_containers)
-            //{
-                //container 
-            {
-                glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
-                glm::mat4 mvp = proj * view * model;
-                shader.SetUniformMat4f("u_MVP", mvp);
-                texture2.Bind();
-                renderer.Draw(va, ib, shader);
-            }
+            //for (int i[1] : vec_returned) {
+            //    glm::vec3 translationG(175, i*10, 0);
+            //    {
+            //        glm::mat4 model = glm::translate(glm::mat4(1.0f), translationG);
+            //        glm::mat4 mvp = proj * view * model;
+            //        shader.SetUniformMat4f("u_MVP", mvp);
+            //        texture2.Bind();
+            //        renderer.Draw(va, ib, shader);
+            //    } 
             //}
-
+            
+                //container 
+                // 
+            //{
+            //    glm::mat4 model = glm::translate(glm::mat4(1.0f), translationF);
+            //    glm::mat4 mvp = proj * view * model;
+            //    shader.SetUniformMat4f("u_MVP", mvp);
+            //    texture2.Bind();
+            //    renderer.Draw(va, ib, shader);
+            //} 
 
             if (r > 1.0f)
                 increment = -0.05f;
@@ -215,6 +230,7 @@ int GuiDraw::Draw()
                 ImGui::SliderFloat2("Translation D", &translationD.x, 0.0f, 1260.0f);
                 ImGui::SliderFloat2("Translation E", &translationE.x, 0.0f, 1360.0f);
                 ImGui::SliderFloat2("Translation F", &translationF.x, 0.0f, 1460.0f);
+                ImGui::SliderFloat2("Translation G", &translationG.x, 0.0f, 1560.0f);
                 //Draw a second square
                 //ImGui::SliderFloat3("Translation B", &translationB.x, 0.0f, 960.0f);
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
@@ -239,6 +255,18 @@ int GuiDraw::Draw()
 
     glfwTerminate();
 }
+//using namespace std;
+//std::variant<vec_types> GuiDraw::DrawContainers() {
+    
+    
+//    glm::vec3 translationZ(175, 35, 0);
+//    std::variant<vec_types> vector_geral{
+//        translationZ,
+
+//    };
+
+//    return vector_geral;
+//}
 
 GuiDraw::~GuiDraw()
 {

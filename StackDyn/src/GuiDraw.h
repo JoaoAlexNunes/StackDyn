@@ -27,6 +27,7 @@
 #include <vector>
 #include <map>
 #include <variant>
+
 //using namespace std;
 //using vec_types = std::variant<vector<int>, glm::vec3, Texture, int, int>;
 
@@ -34,6 +35,7 @@ class GuiDraw
 {
 private:
 	int Draw();
+	//std::variant<vec_types> DrawContainers();
 
 public:
 	GuiDraw();

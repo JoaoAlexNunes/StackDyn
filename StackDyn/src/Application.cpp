@@ -4,7 +4,7 @@
 int main(void)
 {
     Console console;
-    GuiDraw gui;
+    //GuiDraw gui;
     
     return 0;
 }

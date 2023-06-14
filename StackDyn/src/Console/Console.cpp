@@ -1,5 +1,4 @@
 #include "Console.h"
-
 bool stopExecution = false;
 
 std::chrono::milliseconds getRandomInterval(int minMilliseconds, int maxMilliseconds)
@@ -79,4 +78,3 @@ void Console::CreateArrivalStack()
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
-

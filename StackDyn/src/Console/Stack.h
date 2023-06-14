@@ -2,11 +2,19 @@
 
 #include "../pch.h"
 
-class Stack {
-public:
-    int StackID, Weigth;     //tem que ser maios que 1
-    int* Blocklist;
+#include "Block.h"
 
-    Stack(int sId, int w);
+class Stack {
+private:
+    int StackID;
+    int Weight;
+    Block** Blocklist;
+    int currentSize;
+    int MaxHeight;
+public:
+    Stack(int sId, int w, int maxHeight);
     ~Stack();
+
+    void AddBlock(Block* block);
+    bool IsFull() const;
 };

@@ -1,3 +1,9 @@
+#pragma once
+
+#include <list>
+#include <iostream>
+
+
 class Crane {
 public:
     int LocationID;

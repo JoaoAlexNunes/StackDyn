@@ -1,15 +1,6 @@
 #include "Console.h"
 
-
 bool stopExecution = false;
-
-//// Function to execute
-//void myFunction()
-//{
-//    std::cout << "Executing function..." << std::endl;
-//}
-//
-// Function to generate random time intervals
 
 std::chrono::milliseconds getRandomInterval(int minMilliseconds, int maxMilliseconds)
 {
@@ -18,16 +9,6 @@ std::chrono::milliseconds getRandomInterval(int minMilliseconds, int maxMillisec
     std::uniform_int_distribution<> dis(minMilliseconds, maxMilliseconds);
     return std::chrono::milliseconds(dis(gen));
 }
-
-// Asynchronous execution
-//void executeFunctionAsync(int interval)
-//{
-//    while (!stopExecution)
-//    {
-//        std::this_thread::sleep_for(getRandomInterval(interval, interval * 4));
-//        myFunction();
-//    }
-//}
 
 Console::Console()
 {
@@ -38,27 +19,13 @@ Console::~Console()
 {
 }
 
-
-//void Console::Draw()
-//{
-//    SetConsoleTitle(TEXT("3.3.0 - Build 30.0.100.9805"));
-//    std::cout << "Test Console writing" << std::endl;
-//
-//    // Start executing the function asynchronously
-//    std::thread t(executeFunctionAsync, 500);  // Interval of 1000 milliseconds (1 second)
-//
-//    // Do other tasks in the main thread
-//    std::this_thread::sleep_for(std::chrono::seconds(10));  // Let the execution run for 10 seconds
-//
-//    // Stop the asynchronous execution
-//    stopExecution = true;
-//    t.join();
-//
-//}
-
 void Console::CreateArrivalStack()
 {
     Stack* arrivalStack = new Stack(1, 400, 4);
+    Stack buffer1(2, 800, 8);  // Create Stack objects for the three stack buffers
+    Stack buffer2(3, 800, 8);
+    Stack buffer3(4, 800, 8);
+    Stack handover(5, 800, 1);
 
     int blockId = 1;
     while (true) {
@@ -80,11 +47,36 @@ void Console::CreateArrivalStack()
 
         std::cout << "New block created and added to the arrival stack. Block ID: " << blockId << std::endl;
 
+        // Move one container from the arrival stack to a stack buffer
+        if (buffer1.hasSpace()) {
+            Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
+            buffer1.AddBlock(block);  // Move the block to buffer1
+            buffer1.PrintBlocks();
+        } 
+
+        else if (buffer2.hasSpace()) {
+            Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
+            buffer2.AddBlock(block);  // Move the block to buffer2
+            buffer2.PrintBlocks();
+        }
+        else if (buffer3.hasSpace()) {
+            Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
+            buffer3.AddBlock(block);  // Move the block to buffer3
+            buffer3.PrintBlocks();
+        }
+
+        else if (handover.hasSpace()) {
+            Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
+            handover.AddBlock(block);  // Move the block to buffer3
+            handover.PrintBlocks();
+            handover.RemoveBlock();
+            
+        }
+
+
         blockId++;
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
-
 }
-
 

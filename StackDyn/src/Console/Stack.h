@@ -14,7 +14,17 @@ private:
 public:
     Stack(int sId, int w, int maxHeight);
     ~Stack();
-
+    bool hasSpace() const {
+        return currentSize < MaxHeight;
+    }
+    void PrintBlocks() const {
+        for (int i = 0; i < currentSize; i++) {
+            Block* block = Blocklist[i];
+            std::cout << "Block ID: " << block->GetId() << std::endl;
+            // Print other block information as needed
+        }
+    }
     void AddBlock(Block* block);
+    Block* RemoveBlock();
     bool IsFull() const;
 };

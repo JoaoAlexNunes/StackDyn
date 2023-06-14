@@ -1,3 +1,4 @@
+
 #include "Stack.h"
 
 Stack::Stack(int sId, int w, int maxHeight) : StackID(sId), Weight(w), MaxHeight(maxHeight), currentSize(0)

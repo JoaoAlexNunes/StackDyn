@@ -1,5 +1,6 @@
-#include "Console.h"
 
+
+#include "Console.h"
 
 bool stopExecution = false;
 
@@ -86,5 +87,3 @@ void Console::CreateArrivalStack()
     }
 
 }
-
-

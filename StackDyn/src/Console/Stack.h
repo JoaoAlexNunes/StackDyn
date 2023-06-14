@@ -20,7 +20,7 @@ public:
     void PrintBlocks() const {
         for (int i = 0; i < currentSize; i++) {
             Block* block = Blocklist[i];
-            std::cout << "Block ID: " << block->GetId() << std::endl;
+            std::cout << "Block ID: " << block->GetId() <<" Due Date: " << block->GetDueDate() << std::endl;
             // Print other block information as needed
         }
     }

@@ -1,13 +1,26 @@
 #include "Console.h"
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <random>
+#include <ctime>
+#include <ratio>
+#include <cmath> // Add this include for ceil function
+
 bool stopExecution = false;
 
-std::chrono::milliseconds getRandomInterval(int minMilliseconds, int maxMilliseconds)
+std::chrono::seconds getRandomInterval(int minSeconds, int maxSeconds)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(minMilliseconds, maxMilliseconds);
-    return std::chrono::milliseconds(dis(gen));
+    std::uniform_int_distribution<> dis(minSeconds, maxSeconds);
+    int randomSeconds = dis(gen);
+    return std::chrono::seconds(randomSeconds);
 }
+
 
 Console::Console()
 {
@@ -36,8 +49,8 @@ void Console::CreateArrivalStack()
         // Create a new block
         std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = now.time_since_epoch();
-        double releaseTime = elapsed.count() * 1000; // Convert to milliseconds
-        double dueDate = releaseTime + getRandomInterval(1000, 5000).count(); // Generate a random due date
+        double releaseTime = elapsed.count(); // Time in seconds
+        double dueDate = releaseTime + getRandomInterval(1, 5).count(); // Generate a random due date in seconds
 
         Block* newBlock = new Block(blockId, releaseTime, dueDate, "Not Ready");
 
@@ -51,7 +64,7 @@ void Console::CreateArrivalStack()
             Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
             buffer1.AddBlock(block);  // Move the block to buffer1
             buffer1.PrintBlocks();
-        } 
+        }
 
         else if (buffer2.hasSpace()) {
             Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
@@ -69,7 +82,7 @@ void Console::CreateArrivalStack()
             handover.AddBlock(block);  // Move the block to buffer3
             handover.PrintBlocks();
             handover.RemoveBlock();
-            
+
         }
 
 
@@ -78,3 +91,4 @@ void Console::CreateArrivalStack()
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
+

@@ -983,6 +983,9 @@
     <ClInclude Include="src\Console\Crane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\vendor\glm\detail\func_common.inl">

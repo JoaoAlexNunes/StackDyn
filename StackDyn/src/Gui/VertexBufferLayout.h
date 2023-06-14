@@ -1,7 +1,6 @@
 #pragma once
 
-#include <vector>
-#include <stdexcept>
+#include "../pch.h"
 
 #include "Renderer.h"
 

@@ -1,12 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include <windows.h>
-#include <iostream>
-#include <chrono>
-#include <thread>
-#include <random>
+#include "../pch.h"
 
 
 #include "Block.h"

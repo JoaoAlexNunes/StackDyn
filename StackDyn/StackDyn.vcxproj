@@ -102,7 +102,7 @@
     <ClCompile Include="src\Console\Block.cpp" />
     <ClCompile Include="src\Gui\GuiDraw.cpp" />
     <ClCompile Include="src\Console\Console.cpp" />
-    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\EntryPoint.cpp" />
     <ClCompile Include="src\Gui\IndexBuffer.cpp" />
     <ClCompile Include="src\Gui\Renderer.cpp" />
     <ClCompile Include="src\Gui\Shader.cpp" />

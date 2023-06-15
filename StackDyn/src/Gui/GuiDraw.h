@@ -22,12 +22,10 @@
 
 class GuiDraw
 {
-private:
-	int Draw();
-
 public:
 	GuiDraw();
 	~GuiDraw();
+	int Init();
 
 };
 

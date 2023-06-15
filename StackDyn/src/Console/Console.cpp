@@ -13,7 +13,6 @@ std::chrono::seconds getRandomInterval(int minSeconds, int maxSeconds)
 
 Console::Console()
 {
-    Init();
 }
 
 Console::~Console()

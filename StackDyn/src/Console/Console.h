@@ -9,13 +9,11 @@
 
 class Console
 {
-private:
-	void Init();
-
 public:
 
 	Console();
 	~Console();
+	void Init();
 
 };
 

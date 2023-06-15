@@ -2,12 +2,13 @@
 
 bool stopExecution = false;
 
-std::chrono::milliseconds getRandomInterval(int minMilliseconds, int maxMilliseconds)
+std::chrono::seconds getRandomInterval(int minSeconds, int maxSeconds)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(minMilliseconds, maxMilliseconds);
-    return std::chrono::milliseconds(dis(gen));
+    std::uniform_int_distribution<> dis(minSeconds, maxSeconds);
+    int randomSeconds = dis(gen);
+    return std::chrono::seconds(randomSeconds);
 }
 
 Console::Console()
@@ -30,13 +31,13 @@ void Console::Init()
 
     int blockId = 1;
     while (true) {
+
         // Create a new block
         std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = now.time_since_epoch();
         double releaseTime = std::chrono::duration_cast<std::chrono::seconds>(elapsed).count(); // Time in seconds
         double dueDate = releaseTime + getRandomInterval(10, 100).count(); // Generate a random due date in seconds + releaseTime para depois calcular o tempo atual
         Block* newBlock = new Block(blockId, releaseTime, dueDate, "Not Ready");
-
         if (arrivalStack->IsFull()) {
             std::cout << "Arrival stack is full. Stopping the generation of new blocks." << std::endl;
             crane->addToHistory(newBlock, "null");
@@ -56,8 +57,7 @@ void Console::Init()
             buffer1.AddBlock(block);  // Move the block to buffer1
             crane->addToHistory(newBlock, "buffer 1");
             buffer1.PrintBlocks();
-        } 
-
+        }
         else if (buffer2.hasSpace()) {
             Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
             buffer2.AddBlock(block);  // Move the block to buffer2
@@ -70,16 +70,13 @@ void Console::Init()
             crane->addToHistory(newBlock, "buffer 3");
             buffer3.PrintBlocks();
         }
-
         else if (handover.hasSpace()) {
             Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
             handover.AddBlock(block);  // Move the block to buffer3
             handover.PrintBlocks();
             crane->addToHistory(newBlock, "delivered");
             handover.RemoveBlock();
-            
         }
-
 
         blockId++;
 

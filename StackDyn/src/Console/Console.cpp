@@ -6,9 +6,6 @@
 #include <chrono>
 #include <thread>
 #include <random>
-#include <ctime>
-#include <ratio>
-#include <cmath> // Add this include for ceil function
 
 bool stopExecution = false;
 
@@ -20,7 +17,6 @@ std::chrono::seconds getRandomInterval(int minSeconds, int maxSeconds)
     int randomSeconds = dis(gen);
     return std::chrono::seconds(randomSeconds);
 }
-
 
 Console::Console()
 {
@@ -43,14 +39,14 @@ void Console::CreateArrivalStack()
     while (true) {
         if (arrivalStack->IsFull()) {
             std::cout << "Arrival stack is full. Stopping the generation of new blocks." << std::endl;
-            break;
+            // add to history 
         }
 
         // Create a new block
         std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = now.time_since_epoch();
-        double releaseTime = elapsed.count(); // Time in seconds
-        double dueDate = releaseTime + getRandomInterval(1, 5).count(); // Generate a random due date in seconds
+        double releaseTime = std::chrono::duration_cast<std::chrono::seconds>(elapsed).count(); // Time in seconds
+        double dueDate = releaseTime + getRandomInterval(10, 100).count(); // Generate a random due date in seconds + releaseTime para depois calcular o tempo atual
 
         Block* newBlock = new Block(blockId, releaseTime, dueDate, "Not Ready");
 
@@ -65,7 +61,6 @@ void Console::CreateArrivalStack()
             buffer1.AddBlock(block);  // Move the block to buffer1
             buffer1.PrintBlocks();
         }
-
         else if (buffer2.hasSpace()) {
             Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
             buffer2.AddBlock(block);  // Move the block to buffer2
@@ -76,19 +71,15 @@ void Console::CreateArrivalStack()
             buffer3.AddBlock(block);  // Move the block to buffer3
             buffer3.PrintBlocks();
         }
-
         else if (handover.hasSpace()) {
             Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
             handover.AddBlock(block);  // Move the block to buffer3
             handover.PrintBlocks();
             handover.RemoveBlock();
-
         }
-
 
         blockId++;
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
-

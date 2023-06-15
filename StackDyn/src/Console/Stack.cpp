@@ -29,6 +29,7 @@ Block* Stack::RemoveBlock()
         currentSize--; // Update the current size of the stack
         return removedBlock;
         std::cout << "remove block." << std::endl;
+        //add to history
     }
     else {
         std::cout << "Stack is empty. Cannot remove block." << std::endl;

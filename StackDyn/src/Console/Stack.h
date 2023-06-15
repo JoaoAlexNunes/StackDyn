@@ -4,6 +4,7 @@
 
 #include "Block.h"
 
+
 class Stack {
 private:
     int StackID;
@@ -20,7 +21,7 @@ public:
     void PrintBlocks() const {
         for (int i = 0; i < currentSize; i++) {
             Block* block = Blocklist[i];
-            std::cout << "Block ID: " << block->GetId() <<" Due Date: " << block->GetDueDate() << std::endl;
+            std::cout << "Block ID: " << block->GetId() <<" Due Date: " << block->GetSecondsLeftToDueDate() << std::endl;
             // Print other block information as needed
         }
     }

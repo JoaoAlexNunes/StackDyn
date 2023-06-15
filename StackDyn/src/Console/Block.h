@@ -1,6 +1,10 @@
 #pragma once
 
+#include <iostream>
 #include <string>
+#include <chrono>
+
+
 
 class Block {
 public:
@@ -19,8 +23,15 @@ public:
         return Time_Release;
     }
 
-    double GetDueDate() const {
+    double GetDueDate() const {  
         return Due_Date;
+    }
+
+    double GetSecondsLeftToDueDate() const {
+        std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed = now.time_since_epoch();
+        double releaseTim = std::chrono::duration_cast<std::chrono::seconds>(elapsed).count(); // Time in seconds
+        return Due_Date - releaseTim;
     }
 
     std::string GetReady() const {

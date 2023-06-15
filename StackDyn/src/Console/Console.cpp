@@ -33,8 +33,8 @@ void Console::Init()
         // Create a new block
         std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = now.time_since_epoch();
-        double releaseTime = elapsed.count() * 1000; // Convert to milliseconds
-        double dueDate = releaseTime + getRandomInterval(1000, 5000).count(); // Generate a random due date
+        double releaseTime = std::chrono::duration_cast<std::chrono::seconds>(elapsed).count(); // Time in seconds
+        double dueDate = releaseTime + getRandomInterval(10, 100).count(); // Generate a random due date in seconds + releaseTime para depois calcular o tempo atual
         Block* newBlock = new Block(blockId, releaseTime, dueDate, "Not Ready");
 
         if (arrivalStack->IsFull()) {

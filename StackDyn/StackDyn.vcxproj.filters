@@ -63,9 +63,6 @@
     <ClCompile Include="src\Console\Block.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Console\Handover.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Console\Stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -972,9 +969,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Console\Block.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Console\Handover.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Console\Stack.h">

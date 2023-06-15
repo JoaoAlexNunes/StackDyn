@@ -3,13 +3,12 @@
 
 GuiDraw::GuiDraw() 
 {
-    Draw();
 }
 
 
 
 
-int GuiDraw::Draw()
+int GuiDraw::Init()
 {
     GLFWwindow* window;
 

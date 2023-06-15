@@ -98,6 +98,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Console\KnapSack.cpp" />
     <ClCompile Include="src\Console\Crane.cpp" />
     <ClCompile Include="src\Console\Block.cpp" />
     <ClCompile Include="src\Gui\GuiDraw.cpp" />
@@ -118,6 +119,7 @@
     <ClCompile Include="src\Console\Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Console\KnapSack.h" />
     <ClInclude Include="src\Console\Crane.h" />
     <ClInclude Include="src\Console\Block.h" />
     <ClInclude Include="src\Gui\GuiDraw.h" />

@@ -1,4 +1,5 @@
 #include "Console.h"
+#include "KnapSack.h"
 
 bool stopExecution = false;
 
@@ -22,13 +23,15 @@ Console::~Console()
 void Console::Init()
 {
     Stack* arrivalStack = new Stack(1, 400, 4);
-    Stack buffer1(2, 800, 8);  // Create Stack objects for the three stack buffers
-    Stack buffer2(3, 800, 8);
-    Stack buffer3(4, 800, 8);
-    Stack handover(5, 800, 1);
+    Stack* buffer1 = new Stack(2, 800, 8);  // Create Stack objects for the three stack buffers
+    Stack* buffer2 = new Stack(3, 800, 8);
+    Stack* buffer3 = new Stack(4, 800, 8);
+    Stack* handover = new Stack(5, 800, 1);
     Crane* crane = new Crane();
 
     int blockId = 1;
+    std::vector<Block*> blocks;  // Vector to store the blocks
+
     while (true) {
 
         // Create a new block
@@ -48,6 +51,7 @@ void Console::Init()
             crane->addToHistory(newBlock, "arrival");
             std::cout << "New Block with ID: " << newBlock->GetId() << " added" << std::endl;
             std::cout << "" << std::endl;
+            blocks.push_back(newBlock);  // Add the block to the vector
         }
 
 
@@ -55,19 +59,19 @@ void Console::Init()
         Stack* targetBuffer = nullptr;
         int minBufferSize = INT_MAX;
 
-        if (buffer1.hasSpace() && buffer1.GetSize() < minBufferSize) {
-            targetBuffer = &buffer1;
-            minBufferSize = buffer1.GetSize();
+        if (buffer1->hasSpace() && buffer1->GetSize() < minBufferSize) {
+            targetBuffer = buffer1;
+            minBufferSize = buffer1->GetSize();
         }
 
-        if (buffer2.hasSpace() && buffer2.GetSize() < minBufferSize) {
-            targetBuffer = &buffer2;
-            minBufferSize = buffer2.GetSize();
+        if (buffer2->hasSpace() && buffer2->GetSize() < minBufferSize) {
+            targetBuffer = buffer2;
+            minBufferSize = buffer2->GetSize();
         }
 
-        if (buffer3.hasSpace() && buffer3.GetSize() < minBufferSize) {
-            targetBuffer = &buffer3;
-            minBufferSize = buffer3.GetSize();
+        if (buffer3->hasSpace() && buffer3->GetSize() < minBufferSize) {
+            targetBuffer = buffer3;
+            minBufferSize = buffer3->GetSize();
         }
 
         if (targetBuffer != nullptr) {
@@ -85,3 +89,30 @@ void Console::Init()
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
+
+
+        //if (buffer1.hasSpace() && buffer1.GetSize() < minBufferSize) {
+        //    targetBuffer = &buffer1;
+        //    minBufferSize = buffer1.GetSize();
+        //}
+
+        //if (buffer2.hasSpace() && buffer2.GetSize() < minBufferSize) {
+        //    targetBuffer = &buffer2;
+        //    minBufferSize = buffer2.GetSize();
+        //}
+
+        //if (buffer3.hasSpace() && buffer3.GetSize() < minBufferSize) {
+        //    targetBuffer = &buffer3;
+        //    minBufferSize = buffer3.GetSize();
+        //}
+
+        //if (targetBuffer != nullptr) {
+        //    Block* block = arrivalStack->RemoveBlock();  // Remove a block from the arrival stack
+        //    targetBuffer->AddBlock(block);  // Move the block to the target buffer
+        //    crane->addToHistory(newBlock, "buffer");
+        //    targetBuffer->PrintBlocks();
+        //}
+        //else {
+        //    std::cout << "No buffer available. Cannot move block." << std::endl;
+        //}
+

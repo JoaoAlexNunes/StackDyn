@@ -10,8 +10,7 @@
 class Console
 {
 private:
-	void Draw();
-	void CreateArrivalStack();
+	void Init();
 
 public:
 

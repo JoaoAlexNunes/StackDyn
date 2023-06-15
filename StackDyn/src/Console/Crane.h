@@ -2,14 +2,25 @@
 
 #include <list>
 #include <iostream>
+#include "Block.h"
+
+
+// Define a struct to hold the Block and buffer information
+struct BlockData {
+    Block* block;
+    std::string buffer;
+};
 
 
 class Crane {
+private:
+    int countMoves;
+    BlockData data;
+    std::list<BlockData> history;
+
 public:
-    int LocationID;
-    int Load;                        //Que block carrega
-    std::string Schedule;            //EmptyMove ou nao
-    int HorizontalPosition;            //Na grid
-    int VerticalPosition;
-    std::string SequenceNr;            //lista de moves feitos
+    Crane();
+    ~Crane();
+
+    void addToHistory(Block* block, std::string buffer);
 };

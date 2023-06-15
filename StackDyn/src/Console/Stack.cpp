@@ -36,6 +36,17 @@ Block* Stack::RemoveBlock()
     }
 }
 
+Block* Stack::GetBlock(int pos)
+{
+    Block* getBlock = Blocklist[pos]; // Get the top block to be removed 
+    return getBlock;
+}
+
+int Stack::GetCurrentSize() const
+{
+    return currentSize;
+}
+
 bool Stack::IsFull() const
 {
     return currentSize >= MaxHeight;

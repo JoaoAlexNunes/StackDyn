@@ -26,5 +26,8 @@ public:
     }
     void AddBlock(Block* block);
     Block* RemoveBlock();
+    int GetCurrentSize() const;
     bool IsFull() const;
+
+    Block* GetBlock(int pos);
 };

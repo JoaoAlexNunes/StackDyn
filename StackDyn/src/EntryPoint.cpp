@@ -11,12 +11,12 @@ int main(void)
         console.Init();
         });
 
-    std::thread guiThread([&]() {
-        gui.Init();
-        });
+    //std::thread guiThread([&]() {
+    //    //gui.Init();
+    //    });
 
     consoleThread.join();
-    guiThread.join();
+    //guiThread.join();
     
     return 0;
 }

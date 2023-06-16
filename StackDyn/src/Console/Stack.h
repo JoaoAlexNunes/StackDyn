@@ -34,6 +34,28 @@ public:
         }
     }
 
+    std::list<Block*> GetBlocks() const {
+        std::list<Block*> block_list = {};
+        for (int i = 0; i < currentSize; i++) {
+            Block* block = Blocklist[i];
+            block_list.push_back(block);
+            std::cout << "Block ID: " << block->GetId() << " Due Date: " << block->GetSecondsLeftToDueDate() << std::endl;
+            // Print other block information as needed
+        }
+
+        return block_list;
+    }
+
+    Block* GetTopBlock() const {
+        Block* block = Blocklist[currentSize];
+        return block;
+    }
+
+    Block* GetBlock(int i) const {
+        Block* block = Blocklist[i];
+        return block;
+    }
+
     void AddBlock(Block* block);
     Block* RemoveBlock();
     bool IsFull() const;

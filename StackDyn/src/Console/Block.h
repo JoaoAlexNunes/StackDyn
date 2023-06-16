@@ -11,9 +11,14 @@ public:
     int BlockID;
     double Time_Release, Due_Date;
     std::string Ready;
+    double secondsUntilDue;
 
     Block(int bId, double tr, double dd, std::string r);
     ~Block();
+
+    void SetSecondsUntilDue(double s) {
+        secondsUntilDue = s;
+    }
 
     int GetId() const {
         return BlockID;

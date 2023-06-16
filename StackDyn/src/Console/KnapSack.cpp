@@ -116,7 +116,9 @@ void KnapsackGeneticAlgorithm::Handover(Stack& buffer1, Stack& buffer2, Stack& b
         chin_counter++;
         Block* block = buffer1.RemoveBlock();
         crane->addToHistory(block, "handover");
-        std::cout << "Removed from buffer 2 with ID: " << block->GetId() << " and with: " << block->GetSecondsLeftToDueDate() << " seconds left! Removed: " << chin_counter << " in total" << std::endl;
+        double seconds = block->GetSecondsLeftToDueDate();
+        std::cout << "Removed from buffer 2 with ID: " << block->GetId() << " and with: " << seconds << " seconds left! Removed: " << chin_counter << " in total" << std::endl;
+        block->SetSecondsUntilDue(seconds);
         std::cout << std::endl;
 
     }
@@ -125,7 +127,9 @@ void KnapsackGeneticAlgorithm::Handover(Stack& buffer1, Stack& buffer2, Stack& b
         chin_counter++;
         Block* block = buffer2.RemoveBlock();
         crane->addToHistory(block, "handover");
-        std::cout << "Removed from buffer 3 with ID: " << block->GetId() << " and with: " << block->GetSecondsLeftToDueDate() << " seconds left! Removed: " << chin_counter << " in total" << std::endl;
+        double seconds = block->GetSecondsLeftToDueDate();
+        std::cout << "Removed from buffer 3 with ID: " << block->GetId() << " and with: " << seconds << " seconds left! Removed: " << chin_counter << " in total" << std::endl;
+        block->SetSecondsUntilDue(seconds);
         std::cout << std::endl;
 
     }
@@ -133,7 +137,9 @@ void KnapsackGeneticAlgorithm::Handover(Stack& buffer1, Stack& buffer2, Stack& b
         chin_counter++;
         Block* block = buffer3.RemoveBlock();
         crane->addToHistory(block, "handover");
-        std::cout << "Removed from buffer 4 with ID: " << block->GetId() << " and with: "<< block->GetSecondsLeftToDueDate() << " seconds left! Removed: " << chin_counter << " in total" << std::endl;
+        double seconds = block->GetSecondsLeftToDueDate();
+        std::cout << "Removed from buffer 4 with ID: " << block->GetId() << " and with: " << seconds << " seconds left! Removed: " << chin_counter << " in total" << std::endl;
+        block->SetSecondsUntilDue(seconds);
         std::cout << std::endl;
 
     }

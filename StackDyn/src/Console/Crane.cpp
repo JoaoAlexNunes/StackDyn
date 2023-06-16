@@ -21,6 +21,7 @@ void Crane::PrintHistory()
     std::cout << "Crane History:" << std::endl;
     for (const auto& blockData : history) {
         std::cout << "Block ID: " << blockData.block->BlockID << std::endl;
+        std::cout << "Due Time: " << blockData.block->GetSecondsLeftToDueDate() << std::endl;
         std::cout << "Buffer: " << blockData.buffer << std::endl;
         std::cout << std::endl;
     }

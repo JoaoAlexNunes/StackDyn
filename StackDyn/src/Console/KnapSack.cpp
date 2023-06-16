@@ -106,6 +106,7 @@ Stack* KnapsackGeneticAlgorithm::getTargetBuffer(double timeOfTopBlockb1, double
             return &buffer3;
         }
     }
+    return &buffer3;
 }
 
 

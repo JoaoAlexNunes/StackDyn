@@ -1,0 +1,515 @@
+Crane History:
+Block ID: 1
+Due Time: 26
+Buffer: arrival
+
+Block ID: 2
+Due Time: 16
+Buffer: arrival
+
+Block ID: 3
+Due Time: 19
+Buffer: arrival
+
+Block ID: 4
+Due Time: 13
+Buffer: arrival
+
+Block ID: 5
+Due Time: 31
+Buffer: arrival
+
+Block ID: 4
+Due Time: 13
+Buffer: handover
+
+Block ID: 6
+Due Time: 23
+Buffer: arrival
+
+Block ID: 5
+Due Time: 31
+Buffer: handover
+
+Block ID: 7
+Due Time: 22
+Buffer: arrival
+
+Block ID: 8
+Due Time: 34
+Buffer: arrival
+
+Block ID: 9
+Due Time: 25
+Buffer: arrival
+
+Block ID: 10
+Due Time: 18
+Buffer: arrival
+
+Block ID: 9
+Due Time: 25
+Buffer: handover
+
+Block ID: 11
+Due Time: 14
+Buffer: arrival
+
+Block ID: 10
+Due Time: 18
+Buffer: handover
+
+Block ID: 12
+Due Time: 32
+Buffer: arrival
+
+Block ID: 11
+Due Time: 14
+Buffer: handover
+
+Block ID: 13
+Due Time: 35
+Buffer: arrival
+
+Block ID: 12
+Due Time: 32
+Buffer: handover
+
+Block ID: 14
+Due Time: 35
+Buffer: arrival
+
+Block ID: 15
+Due Time: 31
+Buffer: arrival
+
+Block ID: 14
+Due Time: 35
+Buffer: handover
+
+Block ID: 16
+Due Time: 28
+Buffer: arrival
+
+Block ID: 17
+Due Time: 35
+Buffer: arrival
+
+Block ID: 16
+Due Time: 28
+Buffer: handover
+
+Block ID: 18
+Due Time: 22
+Buffer: arrival
+
+Block ID: 17
+Due Time: 35
+Buffer: handover
+
+Block ID: 19
+Due Time: 23
+Buffer: arrival
+
+Block ID: 18
+Due Time: 22
+Buffer: handover
+
+Block ID: 19
+Due Time: 23
+Buffer: Buffer3
+
+Block ID: 20
+Due Time: 9
+Buffer: arrival
+
+Block ID: 13
+Due Time: 35
+Buffer: handover
+
+Block ID: 20
+Due Time: 9
+Buffer: Buffer3
+
+Block ID: 21
+Due Time: 34
+Buffer: arrival
+
+Block ID: 8
+Due Time: 34
+Buffer: handover
+
+Block ID: 6
+Due Time: 23
+Buffer: Buffer4
+
+Block ID: 22
+Due Time: 20
+Buffer: arrival
+
+Block ID: 1
+Due Time: 26
+Buffer: handover
+
+Block ID: 20
+Due Time: 9
+Buffer: Buffer2
+
+Block ID: 23
+Due Time: 13
+Buffer: arrival
+
+Block ID: 20
+Due Time: 9
+Buffer: handover
+
+Block ID: 23
+Due Time: 13
+Buffer: Buffer3
+
+Block ID: 24
+Due Time: 28
+Buffer: arrival
+
+Block ID: 22
+Due Time: 20
+Buffer: handover
+
+Block ID: 23
+Due Time: 13
+Buffer: Buffer2
+
+Block ID: 25
+Due Time: 32
+Buffer: arrival
+
+Block ID: 23
+Due Time: 13
+Buffer: handover
+
+Block ID: 26
+Due Time: 18
+Buffer: arrival
+
+Block ID: 19
+Due Time: 23
+Buffer: handover
+
+Block ID: 25
+Due Time: 32
+Buffer: Buffer2
+
+Block ID: 27
+Due Time: 32
+Buffer: arrival
+
+Block ID: 25
+Due Time: 32
+Buffer: handover
+
+Block ID: 28
+Due Time: 35
+Buffer: arrival
+
+Block ID: 27
+Due Time: 32
+Buffer: handover
+
+Block ID: 29
+Due Time: 30
+Buffer: arrival
+
+Block ID: 15
+Due Time: 31
+Buffer: handover
+
+Block ID: 30
+Due Time: 33
+Buffer: arrival
+
+Block ID: 6
+Due Time: 23
+Buffer: handover
+
+Block ID: 31
+Due Time: 33
+Buffer: arrival
+
+Block ID: 32
+Due Time: 25
+Buffer: arrival
+
+Block ID: 33
+Due Time: 28
+Buffer: arrival
+
+Block ID: 32
+Due Time: 25
+Buffer: handover
+
+Block ID: 34
+Due Time: 34
+Buffer: arrival
+
+Block ID: 33
+Due Time: 28
+Buffer: handover
+
+Block ID: 34
+Due Time: 34
+Buffer: Buffer3
+
+Block ID: 35
+Due Time: 13
+Buffer: arrival
+
+Block ID: 31
+Due Time: 33
+Buffer: handover
+
+Block ID: 35
+Due Time: 13
+Buffer: Buffer3
+
+Block ID: 36
+Due Time: 15
+Buffer: arrival
+
+Block ID: 30
+Due Time: 33
+Buffer: handover
+
+Block ID: 36
+Due Time: 15
+Buffer: Buffer3
+
+Block ID: 37
+Due Time: 19
+Buffer: arrival
+
+Block ID: 29
+Due Time: 30
+Buffer: handover
+
+Block ID: 37
+Due Time: 19
+Buffer: Buffer3
+
+Block ID: 38
+Due Time: 35
+Buffer: arrival
+
+Block ID: 37
+Due Time: 19
+Buffer: handover
+
+Block ID: 38
+Due Time: 35
+Buffer: Buffer3
+
+Block ID: 39
+Due Time: 20
+Buffer: arrival
+
+Block ID: 21
+Due Time: 34
+Buffer: handover
+
+Block ID: 39
+Due Time: 20
+Buffer: Buffer3
+
+Block ID: 40
+Due Time: 32
+Buffer: arrival
+
+Block ID: 39
+Due Time: 20
+Buffer: handover
+
+Block ID: 40
+Due Time: 32
+Buffer: Buffer3
+
+Block ID: 41
+Due Time: 32
+Buffer: arrival
+
+Block ID: 40
+Due Time: 32
+Buffer: handover
+
+Block ID: 41
+Due Time: 32
+Buffer: Buffer3
+
+Block ID: 42
+Due Time: 16
+Buffer: arrival
+
+Block ID: 41
+Due Time: 32
+Buffer: handover
+
+Block ID: 42
+Due Time: 16
+Buffer: Buffer3
+
+Block ID: 43
+Due Time: 35
+Buffer: arrival
+
+Block ID: 42
+Due Time: 16
+Buffer: handover
+
+Block ID: 28
+Due Time: 35
+Buffer: Buffer3
+
+Block ID: 44
+Due Time: 35
+Buffer: arrival
+
+Block ID: 26
+Due Time: 18
+Buffer: handover
+
+Block ID: 24
+Due Time: 28
+Buffer: Buffer4
+
+Block ID: 45
+Due Time: 35
+Buffer: arrival
+
+Block ID: 24
+Due Time: 28
+Buffer: handover
+
+Block ID: 28
+Due Time: 35
+Buffer: Buffer2
+
+Block ID: 46
+Due Time: 26
+Buffer: arrival
+
+Block ID: 28
+Due Time: 35
+Buffer: handover
+
+Block ID: 38
+Due Time: 35
+Buffer: Buffer2
+
+Block ID: 47
+Due Time: 24
+Buffer: arrival
+
+Block ID: 36
+Due Time: 15
+Buffer: handover
+
+Block ID: 35
+Due Time: 13
+Buffer: Buffer2
+
+Block ID: 48
+Due Time: 10
+Buffer: arrival
+
+Block ID: 35
+Due Time: 13
+Buffer: handover
+
+Block ID: 48
+Due Time: 10
+Buffer: Buffer3
+
+Block ID: 49
+Due Time: 35
+Buffer: arrival
+
+Block ID: 47
+Due Time: 24
+Buffer: handover
+
+Block ID: 48
+Due Time: 10
+Buffer: Buffer2
+
+Block ID: 50
+Due Time: 35
+Buffer: arrival
+
+Block ID: 48
+Due Time: 10
+Buffer: handover
+
+Block ID: 34
+Due Time: 34
+Buffer: Buffer4
+
+Block ID: 7
+Due Time: 22
+Buffer: handover
+
+Block ID: 3
+Due Time: 19
+Buffer: Buffer2
+
+Block ID: 3
+Due Time: 19
+Buffer: handover
+
+Block ID: 2
+Due Time: 16
+Buffer: handover
+
+Block ID: 34
+Due Time: 34
+Buffer: handover
+
+Block ID: 44
+Due Time: 35
+Buffer: handover
+
+Block ID: 50
+Due Time: 35
+Buffer: Buffer3
+
+Block ID: 49
+Due Time: 35
+Buffer: Buffer3
+
+Block ID: 38
+Due Time: 35
+Buffer: Buffer3
+
+Block ID: 46
+Due Time: 26
+Buffer: handover
+
+Block ID: 43
+Due Time: 35
+Buffer: handover
+
+Block ID: 38
+Due Time: 35
+Buffer: handover
+
+Block ID: 49
+Due Time: 35
+Buffer: handover
+
+Block ID: 45
+Due Time: 35
+Buffer: handover
+
+Block ID: 50
+Due Time: 35
+Buffer: handover
+
+
+Moves realized by the Crane: 128 IN 50 Created Containers.

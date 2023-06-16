@@ -31,6 +31,7 @@ public:
         std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = now.time_since_epoch();
         double releaseTim = std::chrono::duration_cast<std::chrono::seconds>(elapsed).count(); // Time in seconds
+
         return Due_Date - releaseTim;
     }
 

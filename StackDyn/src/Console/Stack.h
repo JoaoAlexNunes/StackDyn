@@ -39,7 +39,7 @@ public:
         for (int i = 0; i < currentSize; i++) {
             Block* block = Blocklist[i];
             block_list.push_back(block);
-            std::cout << "Block ID: " << block->GetId() << " Due Date: " << block->GetSecondsLeftToDueDate() << std::endl;
+            //std::cout << "Block ID: " << block->GetId() << " Due Date: " << block->GetSecondsLeftToDueDate() << std::endl;
             // Print other block information as needed
         }
 
@@ -54,6 +54,10 @@ public:
     Block* GetBlock(int i) const {
         Block* block = Blocklist[i];
         return block;
+    }
+
+    int GetID() {
+        return StackID;
     }
 
     void AddBlock(Block* block);

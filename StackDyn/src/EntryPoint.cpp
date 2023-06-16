@@ -5,15 +5,13 @@
 int main(void)
 {
     Console console;
-    GuiDraw gui;
+    //GuiDraw gui;
 
     std::thread consoleThread([&]() {
         console.Init();
         });
 
-    //std::thread guiThread([&]() {
-    //    //gui.Init();
-    //    });
+     
 
     consoleThread.join();
     //guiThread.join();

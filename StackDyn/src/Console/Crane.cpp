@@ -12,12 +12,18 @@ void Crane::addToHistory(Block* block, std::string buffer)
 {
     data.block = block;
     data.buffer = buffer;
-    history.push_back(data);
-
-    //std::cout << "Crane History:" << std::endl;
-    //for (const auto& blockData : history) {
-    //    std::cout << "Block ID: " << blockData.block->BlockID << std::endl;
-    //    std::cout << "Buffer: " << blockData.buffer << std::endl;
-    //    std::cout << std::endl;
-    //}
+    history.push_back(data); 
+    countMoves++;
 }
+
+void Crane::PrintHistory()
+{
+    std::cout << "Crane History:" << std::endl;
+    for (const auto& blockData : history) {
+        std::cout << "Block ID: " << blockData.block->BlockID << std::endl;
+        std::cout << "Buffer: " << blockData.buffer << std::endl;
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+    std::cout << "Moves realized by the Crane: " << countMoves << " IN 50 Created Containers." << std::endl;
+} 

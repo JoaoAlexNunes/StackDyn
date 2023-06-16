@@ -23,4 +23,5 @@ public:
     ~Crane();
 
     void addToHistory(Block* block, std::string buffer);
+    void PrintHistory(); 
 };
